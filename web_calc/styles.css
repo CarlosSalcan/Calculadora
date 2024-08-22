@@ -1,0 +1,11 @@
+main {
+    display: grid;
+    place-items: center;            /* Centra tanto horizontal como verticalmente */
+    height: 100vh;
+}
+
+.calculator {
+    width: 300px;
+    height: 400px;
+    background-color: lightgray;
+}
