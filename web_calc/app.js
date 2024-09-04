@@ -15,21 +15,21 @@ button1.addEventListener('click', function () {
 //-------------------------------> FUNCIONES
 
 /**
- *  Funcion para actualizar el valor del display de la calculadora.
+ *  Función para actualizar el valor del display de la calculadora.
  * 
  *  @param {Event} event - El evento de clic que se dispara al presionar un botón.
- *  @param {HTMLInputElement} resultInput - El campo de entrada que actúa como display de la calculadora.
  *  
- * @description
- *  Esta función se encarga de modificar el valor del campo de entrada (`input`) que actúa como 
- *  pantalla de la calculadora. Si el valor actual en el display es "0", este valor será reemplazado 
- *  por el valor del botón clicado. En caso contrario, el valor del botón se concatena al valor 
- *  existente en el display. La función también limita el num de caracteres permitidos
- *  en el display a 16 caracteres para evitar sobrecarga de pantalla.
+ *  @description
+ *  Esta función modifica el valor del campo de entrada (`input`) que actúa como pantalla de la calculadora.
+ *  Si el valor del botón clicado es uno de los operadores matemáticos (`+`, `-`, `X`, `/`), el display
+ *  mostrará una abreviatura correspondiente (`SUM`, `RES`, `MUL`, `DIV`). Si el valor actual en el display 
+ *  es "0" o una abreviatura de operación, se reemplaza por el valor del botón clicado. En caso contrario, 
+ *  el valor del botón se concatena al valor existente en el display. La función también limita el número de 
+ *  caracteres permitidos en el display a 16 caracteres para evitar sobrecarga de pantalla.
  * 
  *  @example
- *  Si el display muestra "0" y se hace clic en el botón "5", el display mostrará "5".
- *  Si el display muestra "12" y se hace clic en el botón "3", el display mostrará "123".
+ *  Si el display muestra "0" y se hace clic en el botón "+", el display mostrará "SUM".
+ *  Si el display muestra "12" y se hace clic en el botón "*", el display mostrará "MUL".
  *  Si el display ya tiene 16 caracteres, no se añadirá ningún carácter adicional.
  * 
  *  @returns {void} - No retorna ningún valor.
