@@ -13,6 +13,7 @@ button1.addEventListener('click', function () {
 });*/
 
 //-------------------------------> FUNCIONES
+
 /**
  *  Funcion para actualizar el valor del display de la calculadora.
  * 
@@ -39,14 +40,22 @@ function actualizarDisplay(event) {
 
     // Verificar longitud de Input. Si es menor que el limte max agrega nuevo carácter.
     if (resultInput.value.length < maxLength) {
-        console.log(resultInput.value);
+        // Mapear operadores a sus abreviaturas
+        const operatorMap = {
+            '+': 'SUM',
+            '-': 'RES',
+            'X': 'MUL',
+            '/': 'DIV'
+        };
+
+        // Reemplazar operador por su abreviatura
+        const displayValue = operatorMap[buttonValue] || buttonValue;
+
         //Reemplazar "0" por el valor del botón clicado, de lo contrario, concatenar
         if (resultInput.value === "0") {
-            console.log(resultInput.value);
-            resultInput.value = buttonValue;
+            resultInput.value = displayValue;
         } else {
-            console.log(resultInput.value);
-            resultInput.value += buttonValue;
+            resultInput.value += displayValue;
         }
     }
 }
@@ -66,9 +75,7 @@ function actualizarDisplay(event) {
  *  @returns {void} - No retorna ningún valor.
  */
 function resetDisplay() {
-    console.log(resultInput.value);
     resultInput.value = null;
-    console.log(resultInput.value);
 }
 
 //-------------------------------> ASIGNAR EVENTOS A BTNS
